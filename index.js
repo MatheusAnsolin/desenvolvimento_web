@@ -118,8 +118,7 @@ app.delete('/usuarios/:id', (req, res) => {
     mensagem: 'Usuário removido com sucesso',
     usuario: usuarioRemovido[0]
   })
-}
-)
+})
 
 
 app.listen(3000, () => {
