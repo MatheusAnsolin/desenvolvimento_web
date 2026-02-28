@@ -25,7 +25,10 @@ const usuarios = [
 let nextId = 4
 
 app.get('/', (req, res) => {
-  res.send(`Olá mundo!`);
+return res.send('Olá, mundo! </br> <a href="/index">Acessar index.html</a>')});
+
+app.get('/index', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
 
 app.get('/usuarios', (req, res) => {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+</head>
+<body>
+    <header>
+        <h1>Perfil</h1>
+    </header>
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    <main>
+        <section>
+            <h2>Informações Pessoais</h2>
+            <img src="https://media.licdn.com/dms/image/v2/D4D35AQHbWnQXkD78dA/profile-framedphoto-shrink_400_400/B4DZxJnqlJHcAg-/0/1770761661279?e=1772841600&v=beta&t=9yJX5BgcNjypHQB2GWgBv3MMNqsDvGAW350kL3mkFOs"
+             alt="Foto de perfil" width="150" style="border-radius: 50%;">
+            <p>Nome: Matheus Padilha Ansolin</p>
+            <p>Telefone: (49) 9 9948-4639</p>
+            <p>Email:
+                <a href="mailto:matheus.padilha@example.com">matheusp.ansolin@gmail.com</a>
+            </p>
+        </section>
+        <section>
+            <br>
+            <h2>Contato</h2>
+            <form id="form"action="/submit" method="post">
+                <label for="name">Nome:</label><br>
+                <input type="text" id="name" name="name" rows="1" cols="50"><br>
+                <label for="message">Deixe uma mensagem:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+                <input type="submit" value="Enviar">
+            </form>
+            <script>
+                const form = document.getElementById("form")
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const dados = new FormData(form);
+                    fetch("/depoimentos", {
+                        method: "POST",
+                        body: dados
+                    })
+                    alert("Formulário enviado com sucesso!");
+                });
+            </script>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Matheus Padilha Ansolin. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
