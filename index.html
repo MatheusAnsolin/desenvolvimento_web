@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
+    <link rel="stylesheet" href="style.css">
+    <!--      type="text/css" -->
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -15,19 +18,30 @@
                 <li><a href="/">Home</a></li>
             </ul>
         </nav>
+    </aside>
     <main>
         <section>
             <h2>Informações Pessoais</h2>
-            <img src="https://media.licdn.com/dms/image/v2/D4D35AQHbWnQXkD78dA/profile-framedphoto-shrink_400_400/B4DZxJnqlJHcAg-/0/1770761661279?e=1772841600&v=beta&t=9yJX5BgcNjypHQB2GWgBv3MMNqsDvGAW350kL3mkFOs"
-             alt="Foto de perfil" width="150" style="border-radius: 50%;">
+            <img src="assets/profile_image.jpg"
+                 alt="Foto de perfil"
+                 style="border-radius: 50%; border: 1px solid red;"
+            >
             <p>Nome: Matheus Padilha Ansolin</p>
             <p>Telefone: (49) 9 9948-4639</p>
             <p>Email:
                 <a href="mailto:matheus.padilha@example.com">matheusp.ansolin@gmail.com</a>
             </p>
         </section>
+        <br>
         <section>
-            <br>
+            <h2>Depoimentos</h2>
+            <div>
+                <img src="assets/profile_image.jpg">
+            </div>
+        </section>
+        <br>
+
+        <section>
             <h2>Contato</h2>
             <form id="form"action="/submit" method="post">
                 <label for="name">Nome:</label><br>
@@ -36,19 +50,6 @@
                 <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
                 <input type="submit" value="Enviar">
             </form>
-            <script>
-                const form = document.getElementById("form")
-                form.addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    const dados = new FormData(form);
-                    fetch("/depoimentos", {
-                        method: "POST",
-                        body: dados
-                    })
-                    alert("Formulário enviado com sucesso!");
-                });
-            </script>
-
         </section>
     </main>
     <footer>
