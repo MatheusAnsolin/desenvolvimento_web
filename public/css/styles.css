@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+body.dark {
+    background-color: #121212;
+    color: white;
+}
+
+.card.dark {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.navbar.dark {
+    background-color: #000 !important;
+}
