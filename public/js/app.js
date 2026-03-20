@@ -1,6 +1,3 @@
-// =======================
-// TEMA
-// =======================
 function toggleTheme() {
     document.body.classList.toggle("dark");
 
@@ -24,9 +21,6 @@ function atualizarBotaoTema() {
     btn.innerText = document.body.classList.contains("dark") ? "☀️" : "🌙";
 }
 
-// =======================
-// NAVBAR
-// =======================
 function atualizarNavbar() {
     const user = JSON.parse(localStorage.getItem("user"));
     const area = document.getElementById("navUserArea");
@@ -48,9 +42,6 @@ function atualizarNavbar() {
     }
 }
 
-// =======================
-// CADASTRO
-// =======================
 async function cadastrar() {
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
@@ -72,9 +63,6 @@ async function cadastrar() {
     }
 }
 
-// =======================
-// LOGIN
-// =======================
 async function login() {
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
@@ -92,9 +80,6 @@ async function login() {
     }
 }
 
-// =======================
-// LOGOUT
-// =======================
 function logout() {
     localStorage.removeItem("user");
     window.location.href = "login.html";
@@ -139,9 +124,7 @@ function salvarConfig() {
 
     alert("Perfil atualizado!");
 }
-// =======================
-// COMENTÁRIOS
-// =======================
+
 async function postar() {
     const texto = document.getElementById("comentario").value;
     const user = JSON.parse(localStorage.getItem("user"));
