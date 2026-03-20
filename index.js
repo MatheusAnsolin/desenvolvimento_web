@@ -53,7 +53,7 @@ app.get('/usuarios/:id', (req, res) => {
 
 // CRIAR
 app.post('/usuarios', (req, res) => {
-  const { nome, email, idade } = req.body;
+  const { nome, email, senha } = req.body;
 
   if (!nome || !email) {
     return res.status(400).json({ erro: 'Nome e email são obrigatórios' });
@@ -63,7 +63,7 @@ app.post('/usuarios', (req, res) => {
     id: nextId++,
     nome,
     email,
-    idade
+    senha
   };
 
   usuarios.push(novoUsuario);
@@ -74,7 +74,7 @@ app.post('/usuarios', (req, res) => {
 // ATUALIZAR TOTAL
 app.put('/usuarios/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const { nome, email, idade } = req.body;
+  const { nome, email, senha } = req.body;
 
   const index = usuarios.findIndex(u => u.id === id);
 
@@ -97,7 +97,7 @@ app.patch('/usuarios/:id', (req, res) => {
     return res.status(404).json({ erro: 'Usuário não encontrado' });
   }
 
-  const { nome, email, idade } = req.body;
+  const { nome, email, senha } = req.body;
 
   if (nome !== undefined) usuario.nome = nome;
   if (email !== undefined) usuario.email = email;
